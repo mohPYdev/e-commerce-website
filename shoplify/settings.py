@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import secret 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's=y!_!lsw#d3lbqn8tv8ea0eb5=iaucbe@rqpf&2rw8&dlids='
+SECRET_KEY = secret.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -137,5 +138,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR , 'static/images')
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rafieiyan.moh@gmail.com'
-EMAIL_HOST_PASSWORD = 'mohamad1379'
+EMAIL_HOST_USER = secret.EMAIL
+EMAIL_HOST_PASSWORD = secret.PASS
