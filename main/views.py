@@ -1,5 +1,6 @@
 from django.shortcuts import render ,redirect , get_object_or_404 , reverse
 from django.contrib.auth import logout , login ,authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from . import forms
 from .models import *
@@ -10,6 +11,7 @@ from django.core.mail import send_mail
 
 # Create your views here.
 
+@login_required(login_url='/login/')
 def home(request):
     products= Product.objects.filter(remaining__gt = 0)
     
